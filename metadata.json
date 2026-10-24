@@ -1,0 +1,6 @@
+{
+  "name": "داش كام الذكي - DashCam Pro",
+  "description": "تطبيق داش كام عربي احترافي يحول هاتفك الذكي إلى كاميرا مراقبة ذكية للسيارة مع تسجيل حلقي ومستشعر حوادث وعداد سرعة HUD ونمط مرآة الزجاج.",
+  "requestFramePermissions": ["camera", "geolocation", "accelerometer", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

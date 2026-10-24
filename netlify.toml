@@ -1,0 +1,25 @@
+# Netlify Configuration for DashCam Pro (داش كام الذكي)
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Single Page App routing (redirect all paths to index.html)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security and Hardware Permissions Headers (Required for Camera, GPS & Sensors)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Allow camera, microphone, geolocation, and accelerometer on Netlify
+    Permissions-Policy = "camera=(self), microphone=(self), geolocation=(self), accelerometer=(self), gyroscope=(self)"
